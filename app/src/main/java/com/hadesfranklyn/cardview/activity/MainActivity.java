@@ -10,12 +10,13 @@ import com.hadesfranklyn.cardview.R;
 import com.hadesfranklyn.cardview.adapter.PostagemAdapter;
 import com.hadesfranklyn.cardview.model.Postagem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerPostagem;
-    private List<Postagem> postagens;
+    private List<Postagem> postagens = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
         //Define layout
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+
+        // Muda a orientacao para Horizontal
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+
+        //Grid layout
+//        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2);
+
         recyclerPostagem.setLayoutManager(layoutManager);
 
         //Define adapter
